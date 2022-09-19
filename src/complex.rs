@@ -52,6 +52,16 @@ impl Complex {
     }
 
     /**
+     * Multiply a complex number to self
+     */
+    pub fn square(&mut self) {
+        self.r *= self.r;
+        self.t += self.t;
+        self.a = calculate_a(self.r, self.t);
+        self.b = calculate_b(self.r, self.t);
+    }
+
+    /**
      * Getters
      */
     pub fn get_a(&self) -> f64 {
