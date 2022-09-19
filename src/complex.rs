@@ -31,7 +31,29 @@ impl Complex {
         }
     }
 
-    // Getters
+    /**
+     * Adds a complex number to self
+     */
+    pub fn add(&mut self, c: &Complex) {
+        self.a += c.a;
+        self.b += c.b;
+        self.r = calculate_r(self.a, self.b);
+        self.t = calculate_t(self.a, self.b);
+    }
+
+    /**
+     * Multiply a complex number to self
+     */
+    pub fn multiply(&mut self, c: &Complex) {
+        self.r *= c.r;
+        self.t += c.t;
+        self.a = calculate_a(self.r, self.t);
+        self.b = calculate_b(self.r, self.t);
+    }
+
+    /**
+     * Getters
+     */
     pub fn get_a(&self) -> f64 {
         self.a
     }
