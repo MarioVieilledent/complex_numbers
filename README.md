@@ -2,6 +2,8 @@
 
 A `Rust` program to implement complex numbers and compute them.
 
+![Screen of program](screen.png)
+
 ## Julia set algorithm
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Julia_set)

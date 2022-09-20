@@ -17,8 +17,8 @@ const HEIGHT: u32 = 720;
 const W: f64 = WIDTH as f64 / 2.0;
 const H: f64 = HEIGHT as f64 / 2.0;
 
-const ESCAPE_RADIUS: f64 = 3.1;
-const MAX_ITER: usize = 25;
+const ESCAPE_RADIUS: f64 = 3.5;
+const MAX_ITER: usize = 100;
 
 pub struct App<'a> {
     gl: GlGraphics,                  // OpenGL drawing backend.
@@ -39,8 +39,8 @@ impl App<'_> {
 
             for y in 0..HEIGHT {
                 for x in 0..WIDTH {
-                    let a: f64 = (x as f64 - W) / W as f64 * 5.6;
-                    let b: f64 = (y as f64 - H) / H as f64 * 5.6;
+                    let a: f64 = (x as f64 - W) / W as f64 * 3.0;
+                    let b: f64 = (y as f64 - H) / H as f64 * 3.0;
                     let mut cplx = complex::Complex::new(complex::Form::Cartesian(a, b));
 
                     let col: f32 = converges(&mut cplx, self.julia_set) as f32 / MAX_ITER as f32;
